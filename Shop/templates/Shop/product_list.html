@@ -1,0 +1,24 @@
+{% extends "Shop/base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div id="sidebar">
+    <h3>Каталог</h3>
+    <ul>
+        <li class="selected">
+            <a href="">Асортимент</a>
+        </li>
+    </ul>
+</div>
+<div id="main" class="product-list">
+    <h1>Товари</h1>
+    {% for el in product_list %}
+    <div class="item">
+        <a href="#">{{ el.name }}</a> <br>
+        <span> Ціна:{{ el.price }}</span>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

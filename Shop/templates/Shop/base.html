@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Shop/css/base.css' %}">
+    <link rel="shortcut icon" href="{% static 'Shop/img/shop.png' %}">
+    <title>{% block title %} Онлайн-магазин {% endblock %}</title>
+</head>
+
+<body>
+    <div class="header">
+        <a href="#" class="logo">Головна</a>
+        <div class="header_search">
+            <form action="" method="GET">
+                <input type="search" name="search" placeholder="Я шукаю...">
+                <button class="btn btn-success" type="submit">Знайти</button>
+            </form>
+        </div>
+        <div class="language">
+            <span>Мова</span>
+        </div>
+    </div>
+    <div class="subheader">
+        <div class="cart">
+            Ваша корзина пуста
+        </div>
+    </div>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+
+</html>
