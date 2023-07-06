@@ -3,22 +3,20 @@
 
 
 {% block content %}
-<div id="sidebar">
+<div class="sidebar">
     <h3>Каталог</h3>
-    <ul>
-        <li class="selected">
-            <a href="">Асортимент</a>
-        </li>
-    </ul>
 </div>
-<div id="main" class="product-list">
-    <h1>Товари</h1>
-    {% for el in product_list %}
-    <div class="item">
-        <a href="#">{{ el.name }}</a> <br>
-        <span> Ціна:{{ el.price }}</span>
+<div class="main">
+    <h1>Усі товари</h1>
+    <div class="product-list">
+        {% for el in products %}
+        <div class="item">
+            <h2><a href="#">{{ el.name }}</a></h2>
+            <img src="{{ el.image.url }}" alt="photo">
+            <h4>Ціна:{{ el.price }}</h4>
+            <span>{{ el.description | truncatewords:3 }}</span>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
-
 {% endblock %}
