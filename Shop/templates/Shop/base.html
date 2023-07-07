@@ -13,7 +13,7 @@
 
 <body>
     <div class="header">
-        <a href="#" class="logo">Головна</a>
+        <a href="{% url 'home' %}" class="logo">Головна</a>
         <div class="header_search">
             <form action="" method="GET">
                 <input type="search" name="search" placeholder="Я шукаю...">
@@ -26,8 +26,20 @@
     </div>
     <div class="subheader">
         <div class="cart">
-            Ваша корзина пуста
+            Ваш кошик порожній
         </div>
+    </div>
+    <div class="sidebar">
+        <h1>Каталог</h1>
+        {% for cat in category %}
+        <ul>
+            <li>
+                <a href="{{ cat.get_absolute_url }}"><br>
+                    {{ cat.name }}
+                </a>
+            </li>
+        </ul>
+        {% endfor %}
     </div>
     <div class="content">
         {% block content %}

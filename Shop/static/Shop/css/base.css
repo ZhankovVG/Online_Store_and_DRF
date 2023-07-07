@@ -75,10 +75,11 @@ body {
 .sidebar {
   float: left;
   width: 25%;
+  margin-top: 20px;
 }
 
-.sidebar h3 {
-  margin-bottom: 10px;
+.sidebar h1 {
+  margin-left: 40px;
 }
 
 .main {
@@ -127,3 +128,22 @@ body {
 }
 
 /* product-list end */
+
+
+/* category output start */
+
+.sidebar a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.sidebar li {
+  list-style: none;
+}
+
+.sidebar a:hover {
+  color: #7e1111;
+}
+
+/* category output end */
