@@ -1,5 +1,6 @@
 from django.db import models
 from slugify import slugify
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -14,6 +15,10 @@ class Category(models.Model):
         ordering = ('name', )
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
+        
+    def get_absolute_url(self):
+        return reverse("category", kwargs={"cat_slug": self.slug})
+    
 
 
 class Product(models.Model):
