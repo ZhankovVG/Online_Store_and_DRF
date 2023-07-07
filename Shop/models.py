@@ -20,7 +20,6 @@ class Category(models.Model):
         return reverse("category", kwargs={"cat_slug": self.slug})
     
 
-
 class Product(models.Model):
     # All items
     name = models.CharField(max_length=200, db_index=True)
@@ -38,14 +37,16 @@ class Product(models.Model):
     
     class Meta:
         ordering = ('name',)
-        index_together = (('id', 'slug'),)
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         return super(Product, self).save(*args, **kwargs)
-
+    
+    def get_absolute_url(self):
+        return reverse("detail", kwargs={'slug' : self.slug})
+    
 
 class Review(models.Model):
     # Review

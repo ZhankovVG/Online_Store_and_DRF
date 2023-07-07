@@ -34,7 +34,7 @@ body {
   border: none;
   outline: none;
   width: 300px;
-  color: #4caf50;
+  color: #000000;
 }
 
 .header_search button {
@@ -129,7 +129,6 @@ body {
 
 /* product-list end */
 
-
 /* category output start */
 
 .sidebar a {
@@ -147,3 +146,20 @@ body {
 }
 
 /* category output end */
+
+/* product detail start */
+
+.product-detail {
+    margin-left: 500px;
+}
+
+.product-detail img {
+    max-width: 200px;
+}
+
+.product-detail a {
+    text-decoration: none;
+    color: #4caf50;
+}
+
+/* product detail end */
