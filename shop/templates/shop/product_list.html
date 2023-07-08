@@ -1,0 +1,20 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="main">
+    <h1>Усі товари</h1>
+    <hr>
+    <div class="product-list">
+        {% for el in product_list %}
+        <div class="item">
+            <h2><a href="{{ el.get_absolute_url }}">{{ el.name }}</h2>
+            <img src="{{ el.image.url }}" alt="photo">
+            <h4>Ціна: {{ el.price }} грн.</h4>
+            <span>{{ el.description | truncatewords:3 }}</span></a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
