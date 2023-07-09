@@ -15,7 +15,7 @@
     <div class="header">
         <a href="{% url 'home' %}" class="logo">Головна</a>
         <div class="header_search">
-            <form action="" method="GET">
+            <form action="{% url 'search' %}" method="GET">
                 <input type="search" name="search" placeholder="Я шукаю...">
                 <button class="btn btn-success" type="submit">Знайти</button>
             </form>
