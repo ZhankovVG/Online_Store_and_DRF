@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from .models import *
+from django.contrib import messages
 
 
 class Mixin:
@@ -15,6 +16,7 @@ class ProductView(Mixin, ListView):
     # Output Produckt
     model = Product
     queryset = Product.objects.filter(available=False)
+    paginate_by = 4
       
 
 class CategoryView(Mixin, ListView):
@@ -32,3 +34,15 @@ class ProductDetailView(Mixin, DetailView):
     model = Product
     slug_field = 'url'
     template_name = 'shop/detail_list.html'
+    
+    
+class SearchView(Mixin, ListView):
+    # Search produccts
+    def get_queryset(self):
+        search_query = self.request.GET.get('search')
+        queryset = Product.objects.filter(name__icontains=search_query)
+        
+        if not queryset.exists():
+            messages.warning(self.request, f"Товар '{search_query}' не найден.")
+        
+        return queryset

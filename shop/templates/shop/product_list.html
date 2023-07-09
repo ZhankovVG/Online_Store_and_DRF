@@ -1,7 +1,6 @@
 {% extends "shop/base.html" %}
 {% load static %}
 
-
 {% block content %}
 <div class="main">
     <h1>Усі товари</h1>
@@ -16,5 +15,34 @@
         </div>
         {% endfor %}
     </div>
+
+    <!-- message if item not found -->
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <!-- -------------------------------------------- -->
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; первая</a>
+            <a href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
+            {% endif %}
+
+            <span class="current">
+                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">следующая</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">последняя &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
 </div>
+<br><br><br>
 {% endblock %}
