@@ -194,3 +194,31 @@ body {
 }
 
 /* product detail end */
+
+
+/* account_logout,login,signup start */
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-fluid {
+  width: 100%;
+  max-width: 400px;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.well {
+  margin-bottom: 1rem;
+}
+
+/* account_logout,login,signup end */
