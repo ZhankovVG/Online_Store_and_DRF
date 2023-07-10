@@ -23,6 +23,7 @@ class CategoryView(Mixin, ListView):
     # Product listing by category
     model = Product
     template_name = 'shop/product_list.html'
+    paginate_by = 4
     
     def get_queryset(self):
         category = get_object_or_404(Category, url=self.kwargs['cat_slug'])
