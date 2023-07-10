@@ -10,6 +10,7 @@ from django.contrib.staticfiles.views import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('shop.urls')),
+    path('accounts/', include('allauth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

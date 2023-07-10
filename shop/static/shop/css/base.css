@@ -66,6 +66,11 @@ body {
 
 .content {
   padding: 20px;
+} 
+
+.user {
+  margin-left: 20px;
+  color: #7e1111;
 }
 
 /* header end */
