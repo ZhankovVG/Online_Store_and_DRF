@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import ListView, DetailView, View
 from .models import *
 from django.contrib import messages
+from .forms import CommentsAddForm
 
 
 class Mixin:
@@ -47,3 +48,15 @@ class SearchView(Mixin, ListView):
             messages.warning(self.request, f"Товар '{search_query}' не найден.")
         
         return queryset
+    
+    
+class CommentsView(View):
+    # Review
+    def post(self, request, pk):
+        form = CommentsAddForm(request.POST)
+        product = Product.objects.get(id=pk)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.product = product
+            form.save()
+        return redirect(product.get_absolute_url())

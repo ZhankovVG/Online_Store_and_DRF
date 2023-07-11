@@ -17,4 +17,36 @@
     </form>
     {{ product.description | linebreaks }}
 </div>
+
+<div class="comments">
+    <form action="{% url 'comments' product.id %}" method="post">
+        <h2>Ваш відгук </h2>
+        {% csrf_token %}
+        <div class="input-txt">
+            <label for="username"></label>
+            <input type="text" name="name" placeholder="Имя *">
+        </div>
+        <div class="input-email">
+            <label for="useremail"></label>
+            <input type="email" name="email" placeholder="Email *">
+            <div class="text-user">
+                <label for="comments"></label>
+                <textarea name="text" id="" cols="23" rows="" placeholder="Ваш коментар *"></textarea>
+            </div>
+        </div>
+        <div class="button">
+            <button type="submit" class="btn btn-success">Відправити</button>
+        </div>
+    </form>
+
+    <div class="comments-user">
+        <h3>Коментарі:</h3>
+        {% for comment in product.review_set.all %}
+        <p><b>Ім'я :</b> {{ comment.name }}</p>
+        <p><b>Коментар :</b> {{ comment.text }}</p>
+        <hr>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}

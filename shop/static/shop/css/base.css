@@ -193,6 +193,28 @@ body {
   color: #4caf50;
 }
 
+/* comments start */
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comments-user {
+  margin-top: -175px;
+  float: right;
+  margin-left: 37em;
+}
+
+.input-email,
+.text-user {
+    margin-top: 5px;
+}
+
+/* comments end */
+
+
 /* product detail end */
 
 /* account_logout,login,signup start */
