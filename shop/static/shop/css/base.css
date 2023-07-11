@@ -73,6 +73,14 @@ body {
   color: #7e1111;
 }
 
+.button {
+  color: #fd0000;
+}
+
+.button:hover {
+  color: #000000;
+}
+
 /* header end */
 
 /* product-list start */
