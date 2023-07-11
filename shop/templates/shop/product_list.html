@@ -2,18 +2,8 @@
 {% load static %}
 
 {% block content %}
-<div class="sidebar">
-    <h1>Каталог</h1>
-    {% for cat in categories %}
-    <ul>
-        <li>
-            <a href="{{ cat.get_absolute_url }}"><br>
-                {{ cat.name }}
-            </a>
-        </li>
-    </ul>
-    {% endfor %}
-</div>
+
+{% include "shop/catalog.html" %}
 
 <div class="main">
     <h1>Усі товари</h1>
