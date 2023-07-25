@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, View
 from .models import *
 from django.contrib import messages
 from .forms import CommentsAddForm
+from cart.forms import CartAddProductForm
 
 
 class Mixin:
@@ -10,6 +11,7 @@ class Mixin:
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["categories"] = Category.objects.all()
+        context['cart_product_form'] = CartAddProductForm
         return context
     
 
