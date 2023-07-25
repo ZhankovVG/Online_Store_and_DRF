@@ -11,10 +11,11 @@
     <img src="{{ product.image.url }}">
     <p class="price">{{ product.price }} грн.</p>
 
-    <form action="#" method="post">
+    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+        {{ cart_product_form }}
         {% csrf_token %}
-        <button class="button" type="submit">Додати до кошика</button>
-    </form>
+        <button class="button" type="submit">Додати до корзини</button>
+      </form>
     {{ product.description | linebreaks }}
 </div>
 

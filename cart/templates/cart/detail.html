@@ -1,0 +1,108 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+Ваша корзина
+{% endblock %}
+
+{% block content %}
+<h1>Ваша корзина</h1>
+<table class="cart">
+    <thead>
+    <tr>
+        <th>Зображення</th>
+        <th>Товар</th>
+        <th>Кількість</th>
+        <th>Видалити</th>
+        <th>Ціна за одиницю товару</th>
+        <th>Сумма замовлення</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in cart %}
+    {% with product=item.product %}
+    <tr>
+        <td>
+            <a href="{{ product.get_absolute_url }}">
+                <img src="{{ product.image.url }}">
+            </a>
+        </td>
+        <td>{{ product.name }}</td>
+        <td>
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                {% csrf_token %}
+                {{ item.update_quantity_form.quantity }}
+                {{ item.update_quantity_form.update }}
+                <input type="submit" value="+">
+            </form>
+        </td>
+        <td><a href="{% url 'cart:cart_remove' product.id %}">Видалити</a></td>
+        <td class="num">{{ item.price }} грн.</td>
+        <td class="num">{{ item.total_price }} грн.</td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+    {% if cart.coupon %}
+    <tr class="subtotal">
+        <td>Сумма замовлення</td>
+        <td colspan="4"></td>
+        <td class="num">{{ cart.get_total_price|floatformat:"2" }}</td>
+    </tr>
+    <!-- <tr>
+        <td>
+            {% trans 'Ваучер №' %}{{ cart.coupon.code }},
+            ({% trans 'Знижка' %} {{ cart.coupon.discount }}% )
+        </td>
+        <td colspan="4"></td>
+        <td class="num neg">
+            {{ cart.get_discount|floatformat:"2" }}
+        </td>
+    </tr> -->
+    {% endif %}
+    <!-- <tr class="total">
+        <td>Сумма зі знижкою</td>
+        <td colspan="4"></td>
+        <td class="num">
+            {{ cart.get_total_price_after_discount|floatformat:"2" }}
+        </td>
+    </tr> -->
+    </tbody>
+</table>
+<!-- {% if recommended_products %}
+<div class="recommendations cart">
+    <h3>Товари які купували з обранним</h3>
+    {% for p in recommended_products %}
+    <div class="item">
+        <a href="{{ p.get_absolute_url }}">
+            <img src="{% if p.image %}{{ p.image.url }}{% else %}
+{% static 'img/no_image.png' %}{% endif %}">
+        </a>
+        <p><a href="{{ p.get_absolute_url }}">{{ p.name }}</a></p>
+    </div>
+    {% endfor %}
+</div>
+{% endif %} -->
+<!-- <p>Використати ваучер:</p>
+<h6 style="color:red;">Зверніть увагу! Використати ваучер можна лише один раз</h6>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %} -->
+<!-- <form action="" method="post">
+    {{ coupon_apply_form }}
+    <button class="button" type="submit">Застосувати</button>
+    {% csrf_token %}
+</form> -->
+    <p class="text-right">
+        <a href="{% url 'home' %}" class="button light">Продовжити покупки</a>
+        <a href="#" class="button">
+            Зробити замовлення
+        </a>
+    </p>
+{% endblock %}
