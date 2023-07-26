@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'orders',
+    'discount',
     
     'django.contrib.sites',
     'allauth',
@@ -149,3 +150,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 
 CART_SESSION_ID = 'cart'
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1
