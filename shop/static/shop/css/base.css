@@ -251,14 +251,6 @@ body {
 
 /* account_logout,login,signup end */
 
-
-
-
-
-
-
-
-
 table {
   width: 100%;
   border-spacing: 0;
@@ -315,3 +307,174 @@ h1 {
   color: #a82d2d;
   border: 4px solid #a82d2d;
 }
+
+/* make an order start */
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.order-info {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.order-info h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.order-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order-info li {
+  margin-bottom: 5px;
+}
+
+.order-info span {
+  color: #ff0000;
+}
+
+.order-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.order-form p {
+  text-align: center;
+}
+
+.order-form .button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.order-form .button:hover {
+  background-color: #45a049;
+}
+
+.order-form input[type="text"],
+.order-form input[type="email"],
+.order-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.order-form textarea {
+  resize: vertical;
+}
+
+.order-form button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.order-form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* make an order end */
+
+
+/* payment process start */
+
+
+.process {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.process h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.process h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.process label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.process .field {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.process .button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.process .button:hover {
+  background-color: #45a049;
+}
+
+.process input[type="text"],
+.process input[type="email"],
+.process textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.process .success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.process .error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+/* payment process end */

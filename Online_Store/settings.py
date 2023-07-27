@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+from decouple import config
+from braintree import Configuration, Environment
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,9 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-load_dotenv()
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY', default='')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'cart',
     'orders',
     'discount',
+    'payment',
     'django_crontab',
     
     'django.contrib.sites',
@@ -150,6 +151,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 86400
+
 
 SITE_ID = 1
 
@@ -162,6 +166,23 @@ REDIS_PORT = 6379
 REDIS_DB = 1
 
 
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+
 CRONJOBS = [
     ('0 2 * * *', 'shop.clean_session.clean_session')
 ]
+
+
+BRAINTREE_MERCHANT_ID = config('BRAINTREE_MERCHANT_ID', default='')
+BRAINTREE_PUBLIC_KEY = config('BRAINTREE_PUBLIC_KEY', default='')
+BRAINTREE_PRIVATE_KEY = config('BRAINTREE_PRIVATE_KEY', default='')
+
+
+Configuration.configure(
+    Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
