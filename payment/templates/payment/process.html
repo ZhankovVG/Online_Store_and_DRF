@@ -1,30 +1,31 @@
 {% extends "shop/base.html" %}
+{% load i18n %}
 
-{% block title %}Оплата кредитною карткою{% endblock %}
+{% block title %}{% trans "Оплата кредитною карткою" %}{% endblock %}
 
 {% block content %}
 <div class="process">
 
-  <h1>Дякуємо!</h1>
-  <p>Ваше замовлення успішно створено. Номер вашого замовлення <strong>{{ order.id }}</strong>.</p>
+  <h1>{% trans "Дякуємо!" %}</h1>
+  <p>{% trans "Ваше замовлення успішно створено. Номер вашого замовлення" %} <strong>{{ order.id }}</strong>.</p>
   <p> </p>
   <p> </p>
-  <h2>Тепер ви можете оплатити замовлення кредитною карткою</h2>
+  <h2>{% trans "Тепер ви можете оплатити замовлення кредитною карткою" %}</h2>
 
   <form action="." id="payment" method="post">
 
-    <label for="card-number">Номер карти</label>
+    <label for="card-number">{% trans "Номер карти" %}</label>
     <div id="card-number" class="field"></div>
 
     <label for="cvv">CVV</label>
     <div id="cvv" class="field"></div>
 
-    <label for="expiration-date">Термін дії</label>
+    <label for="expiration-date">{% trans "Термін дії" %}</label>
     <div id="expiration-date" class="field"></div>
 
     <input type="hidden" id="nonce" name="payment_method_nonce" value="">
     {% csrf_token %}
-    <button class="button" type="submit">Сплатити</button>
+    <button class="button" type="submit">{% trans "Сплатити" %}</button>
   </form>
 </div>
 

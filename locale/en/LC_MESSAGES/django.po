@@ -1,0 +1,380 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 19:26+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: cart/templates/cart/detail.html:7 cart/templates/cart/detail.html:11
+msgid "Ваша корзина"
+msgstr "Your shopping cart"
+
+#: cart/templates/cart/detail.html:15
+msgid "Зображення"
+msgstr "Image"
+
+#: cart/templates/cart/detail.html:16 orders/templates/orders/order/pdf.html:24
+msgid "Товар"
+msgstr "Product"
+
+#: cart/templates/cart/detail.html:17 orders/templates/orders/order/pdf.html:26
+msgid "Кількість"
+msgstr "Number"
+
+#: cart/templates/cart/detail.html:18 cart/templates/cart/detail.html:41
+msgid "Видалити"
+msgstr "Remove"
+
+#: cart/templates/cart/detail.html:19
+msgid "Ціна за одиницю товару"
+msgstr "Price per product unit"
+
+#: cart/templates/cart/detail.html:20 cart/templates/cart/detail.html:49
+#: orders/templates/orders/order/pdf.html:44
+msgid "Сумма замовлення"
+msgstr "Order amount"
+
+#: cart/templates/cart/detail.html:55
+#: orders/templates/orders/order/create.html:21
+msgid "Ваучер"
+msgstr "Voucher"
+
+#: cart/templates/cart/detail.html:56 orders/templates/orders/order/pdf.html:40
+msgid "Знижка"
+msgstr "Discount"
+
+#: cart/templates/cart/detail.html:65
+msgid "Сумма зі знижкою"
+msgstr "Discounted amount"
+
+#: cart/templates/cart/detail.html:75
+msgid "Товари які купували з обранним"
+msgstr "Goods bought with the chosen one"
+
+#: cart/templates/cart/detail.html:87
+msgid "Використати ваучер:"
+msgstr "Use the voucher:"
+
+#: cart/templates/cart/detail.html:88
+msgid "Зверніть увагу! Використати ваучер можна лише один раз"
+msgstr "Pay attention! Voucher can be used only once"
+
+#: cart/templates/cart/detail.html:100
+msgid "Застосувати"
+msgstr "Apply"
+
+#: cart/templates/cart/detail.html:104
+msgid "Продовжити покупки"
+msgstr "Continue shopping"
+
+#: cart/templates/cart/detail.html:106
+#: orders/templates/orders/order/create.html:5
+#: orders/templates/orders/order/create.html:9
+msgid "Зробити замовлення"
+msgstr "Make an order"
+
+#: orders/templates/orders/order/create.html:12
+msgid "Ваше замовлення"
+msgstr "Your order"
+
+#: orders/templates/orders/order/create.html:26
+msgid "Сумма замовлення:"
+msgstr "Order amount:"
+
+#: orders/templates/orders/order/create.html:31
+msgid "Розмістити замовлення"
+msgstr "Place an order"
+
+#: orders/templates/orders/order/pdf.html:6
+msgid "Рахунок"
+msgstr "Score"
+
+#: orders/templates/orders/order/pdf.html:12
+msgid "Рахунок для"
+msgstr "Account for"
+
+#: orders/templates/orders/order/pdf.html:20
+msgid "Найменування товарів"
+msgstr "Name of goods"
+
+#: orders/templates/orders/order/pdf.html:25
+msgid "Ціна"
+msgstr "Price"
+
+#: orders/templates/orders/order/pdf.html:27
+msgid "Вартість"
+msgstr "Cost"
+
+#: orders/templates/orders/order/pdf.html:52
+msgid "Сплачено"
+msgstr "Paid"
+
+#: orders/templates/orders/order/pdf.html:52
+msgid "Рахунок не сплачено"
+msgstr "The bill has not been paid"
+
+#: payment/templates/payment/canceled.html:5
+msgid "Ваш платіж не оброблено"
+msgstr "Your payment has not been processed"
+
+#: payment/templates/payment/canceled.html:6
+msgid "Виникла проблема з обробкою вашого платежу."
+msgstr ""
+
+#: payment/templates/payment/done.html:6
+msgid "Ваш платіж пройшов успішно"
+msgstr "Your payment was successful"
+
+#: payment/templates/payment/done.html:7
+msgid "Ваш платіж успішно оброблено."
+msgstr "Your payment has been successfully processed."
+
+#: payment/templates/payment/process.html:4
+msgid "Оплата кредитною карткою"
+msgstr "Payment by credit card"
+
+#: payment/templates/payment/process.html:9
+msgid "Дякуємо!"
+msgstr "Thank you!"
+
+#: payment/templates/payment/process.html:10
+msgid "Ваше замовлення успішно створено. Номер вашого замовлення"
+msgstr "Your order has been successfully created. Your order number"
+
+#: payment/templates/payment/process.html:13
+msgid "Тепер ви можете оплатити замовлення кредитною карткою"
+msgstr "You can now pay for your order by credit card"
+
+#: payment/templates/payment/process.html:17
+msgid "Номер карти"
+msgstr "Card number"
+
+#: payment/templates/payment/process.html:23
+msgid "Термін дії"
+msgstr "Validity"
+
+#: payment/templates/payment/process.html:28
+msgid "Сплатити"
+msgstr "To pay"
+
+#: shop/templates/account/login.html:7 shop/templates/account/login.html:17
+#: shop/templates/account/login.html:59
+msgid "Sign In"
+msgstr ""
+
+#: shop/templates/account/login.html:24
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"          of your existing third party accounts. Or, <a "
+"href=\"%(signup_url)s\">sign up</a>\n"
+"          for a %(site_name)s account and sign in below:"
+msgstr ""
+
+#: shop/templates/account/login.html:34
+msgid "or"
+msgstr ""
+
+#: shop/templates/account/login.html:41
+#, python-format
+msgid ""
+"Якщо ви ще не створили обліковий запис, будь ласка,\n"
+"          <a href=\"%(signup_url)s\">зареєструйтесь.</a> "
+msgstr ""
+
+#: shop/templates/account/login.html:58
+msgid "Forgot Password?"
+msgstr ""
+
+#: shop/templates/account/logout.html:6 shop/templates/account/logout.html:13
+#: shop/templates/account/logout.html:24
+msgid "Sign Out"
+msgstr ""
+
+#: shop/templates/account/logout.html:17
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: shop/templates/account/signup.html:5
+msgid "Signup"
+msgstr ""
+
+#: shop/templates/account/signup.html:15 shop/templates/account/signup.html:31
+msgid "Sign Up"
+msgstr ""
+
+#: shop/templates/account/signup.html:21
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+
+#: shop/templates/shop/base.html:13
+msgid "Онлайн-магазин"
+msgstr "Online-store"
+
+#: shop/templates/shop/base.html:18
+msgid "Головна"
+msgstr "Main"
+
+#: shop/templates/shop/base.html:22
+msgid "Знайти"
+msgstr "Find"
+
+#: shop/templates/shop/base.html:33
+msgid "Мова:"
+msgstr "Language:"
+
+#: shop/templates/shop/base.html:48
+msgid "Вихід"
+msgstr "Exit"
+
+#: shop/templates/shop/base.html:51
+msgid "Вхід"
+msgstr "Login"
+
+#: shop/templates/shop/base.html:52
+msgid "Реєстрація"
+msgstr "Registration"
+
+#: shop/templates/shop/base.html:61
+msgid "Кошик:"
+msgstr "Cart:"
+
+#: shop/templates/shop/base.html:63
+msgid "предметів"
+msgstr "items"
+
+#: shop/templates/shop/base.html:63
+msgid "сума"
+msgstr "sum"
+
+#: shop/templates/shop/base.html:66
+msgid "Ваш кошик порожній"
+msgstr "Your cart is empty"
+
+#: shop/templates/shop/catalog.html:3
+msgid "Каталог"
+msgstr "Catalog"
+
+#: shop/templates/shop/detail_list.html:11
+msgid "Категорія:"
+msgstr "Category:"
+
+#: shop/templates/shop/detail_list.html:13
+#: shop/templates/shop/product_list.html:17
+msgid "грн."
+msgstr "UAH."
+
+#: shop/templates/shop/detail_list.html:18
+msgid "Додати до корзини"
+msgstr "Add to cart"
+
+#: shop/templates/shop/detail_list.html:25
+msgid "Ваш відгук"
+msgstr "Your feedback"
+
+#: shop/templates/shop/detail_list.html:40
+msgid "Відправити"
+msgstr "Send"
+
+#: shop/templates/shop/detail_list.html:45
+msgid "Коментарі:"
+msgstr "Comments:"
+
+#: shop/templates/shop/detail_list.html:47
+msgid "Ім'я :"
+msgstr "Name :"
+
+#: shop/templates/shop/detail_list.html:48
+msgid "Коментар :"
+msgstr "Comment :"
+
+#: shop/templates/shop/product_list.html:10
+msgid "Усі товари"
+msgstr "All products"
+
+#: shop/templates/shop/product_list.html:17
+msgid "Ціна:"
+msgstr "Price:"
+
+#: shop/templates/shop/product_list.html:36
+msgid "первая"
+msgstr "first"
+
+#: shop/templates/shop/product_list.html:37
+msgid "предыдущая"
+msgstr "previous"
+
+#: shop/templates/shop/product_list.html:41
+msgid "Страница"
+msgstr "Page"
+
+#: shop/templates/shop/product_list.html:41
+msgid "из"
+msgstr "from"
+
+#: shop/templates/shop/product_list.html:45
+msgid "следующая"
+msgstr "next"
+
+#: shop/templates/shop/product_list.html:46
+msgid "последняя"
+msgstr "last"
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:220
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:221
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:229
+msgid "Django Documentation"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:238
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Get started with Django"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:247
+msgid "Django Community"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Connect, get help, or contribute"
+msgstr ""

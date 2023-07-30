@@ -1,19 +1,20 @@
 {% extends "shop/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 
 {% include "shop/catalog.html" %}
 
 <div class="main">
-    <h1>Усі товари</h1>
+    <h1>{% trans "Усі товари" %}</h1>
     <hr>
     <div class="product-list">
         {% for el in product_list %}
         <div class="item">
             <h2><a href="{{ el.get_absolute_url }}">{{ el.name }}</h2>
             <img src="{{ el.image.url }}" alt="photo">
-            <h4>Ціна: {{ el.price }} грн.</h4>
+            <h4>{% trans "Ціна:" %} {{ el.price }} {% trans "грн." %}</h4>
             <span>{{ el.description | truncatewords:3 }}</span></a>
         </div>
         {% endfor %}
@@ -32,17 +33,17 @@
     <div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; первая</a>
-            <a href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
+            <a href="?page=1">&laquo; {% trans "первая" %}</a>
+            <a href="?page={{ page_obj.previous_page_number }}">{% trans "предыдущая" %}</a>
             {% endif %}
 
             <span class="current">
-                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+                {% trans "Страница" %} {{ page_obj.number }} {% trans "из" %} {{ page_obj.paginator.num_pages }}.
             </span>
 
             {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">следующая</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">последняя &raquo;</a>
+            <a href="?page={{ page_obj.next_page_number }}">{% trans "следующая" %}</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">{% trans "последняя" %} &raquo;</a>
             {% endif %}
         </span>
     </div>

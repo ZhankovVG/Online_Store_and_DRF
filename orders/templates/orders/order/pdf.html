@@ -1,14 +1,15 @@
+{% load i18n %}
 <html>
 <body>
   <h1>First shop</h1>
   <p>
-    <br>Рахунок № {{ order.id }}</br>
+    <br>{% trans "Рахунок" %} № {{ order.id }}</br>
     <span class="secondary">
       {{ order.created|date:"M d, Y" }}
     </span>
   </p>
 
-  <h3>Рахунок для</h3>
+  <h3>{% trans "Рахунок для" %}</h3>
   <p>
     {{ order.first_name }} {{ order.last_name }}<br>
     {{ order.email }}<br>
@@ -16,14 +17,14 @@
     {{ order.postal_code }}, {{ order.city }}
   </p>
 
-  <h3>Найменування товарів</h3>
+  <h3>{% trans "Найменування товарів" %}</h3>
   <table>
     <thead>
       <tr>
-        <th>Товар</th>
-        <th>Ціна</th>
-        <th>Кількість</th>
-        <th>Вартість</th>
+        <th>{% trans "Товар" %}</th>
+        <th>{% trans "Ціна" %}</th>
+        <th>{% trans "Кількість" %}</th>
+        <th>{% trans "Вартість" %}</th>
       </tr>
     </thead>
     <tbody>
@@ -36,11 +37,11 @@
         </tr>
       {% endfor %}
       <tr >
-          <td colspan="3">Знижка</td>
+          <td colspan="3">{% trans "Знижка" %}</td>
           <td class="num">${{ order.discount }}</td>
       </tr>
       <tr class="total">
-        <td colspan="3">Сумма замовлення</td>
+        <td colspan="3">{% trans "Сумма замовлення" %}</td>
         <td class="num">${{ order.get_total_cost }}</td>
       </tr>
 
@@ -48,7 +49,7 @@
   </table>
 
   <span class="{% if order.paid %}paid{% else %}pending{% endif %}">
-    {% if order.paid %}Сплачено{% else %}Рахунок не сплачено{% endif %}
+    {% if order.paid %}{% trans "Сплачено" %}{% else %}{% trans "Рахунок не сплачено" %}{% endif %}
   </span>
 </body>
 </html>

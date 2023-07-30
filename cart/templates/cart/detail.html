@@ -1,21 +1,23 @@
 {% extends "shop/base.html" %}
 {% load static %}
+{% load i18n %}
+
 
 {% block title %}
-Ваша корзина
+{% trans "Ваша корзина" %}
 {% endblock %}
 
 {% block content %}
-<h1>Ваша корзина</h1>
+<h1>{% trans "Ваша корзина" %}</h1>
 <table class="cart">
     <thead>
     <tr>
-        <th>Зображення</th>
-        <th>Товар</th>
-        <th>Кількість</th>
-        <th>Видалити</th>
-        <th>Ціна за одиницю товару</th>
-        <th>Сумма замовлення</th>
+        <th>{% trans "Зображення" %}</th>
+        <th>{% trans "Товар" %}</th>
+        <th>{% trans "Кількість" %}</th>
+        <th>{% trans "Видалити" %}</th>
+        <th>{% trans "Ціна за одиницю товару" %}</th>
+        <th>{% trans "Сумма замовлення" %}</th>
     </tr>
     </thead>
     <tbody>
@@ -36,7 +38,7 @@
                 {% csrf_token %}
             </form>
         </td>
-        <td><a href="{% url 'cart:cart_remove' product.id %}">Видалити</a></td>
+        <td><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Видалити" %}</a></td>
         <td class="num">{{ item.price }}</td>
         <td class="num">{{ item.total_price }}</td>
     </tr>
@@ -44,14 +46,14 @@
     {% endfor %}
     {% if cart.coupon %}
     <tr class="subtotal">
-        <td>Сумма замовлення</td>
+        <td>{% trans "Сумма замовлення" %}</td>
         <td colspan="4"></td>
         <td class="num">{{ cart.get_total_price|floatformat:"2" }}</td>
     </tr>
     <tr>
         <td>
-            Ваучер №{{ cart.coupon.code }},
-            Знижка {{ cart.coupon.discount }}
+            {% trans "Ваучер" %} №{{ cart.coupon.code }},
+            {% trans "Знижка" %} {{ cart.coupon.discount }}
         </td>
         <td colspan="4"></td>
         <td class="num neg">
@@ -60,7 +62,7 @@
     </tr>
     {% endif %}
     <tr class="total">
-        <td>Сумма зі знижкою</td>
+        <td>{% trans "Сумма зі знижкою" %}</td>
         <td colspan="4"></td>
         <td class="num">
             {{ cart.get_total_price_after_discount|floatformat:"2" }}
@@ -70,7 +72,7 @@
 </table>
 {% if recommended_products %}
 <div class="recommendations cart">
-    <h3>Товари які купували з обранним</h3>
+    <h3>{% trans "Товари які купували з обранним" %}</h3>
     {% for p in recommended_products %}
     <div class="item">
         <a href="{{ p.get_absolute_url }}">
@@ -82,8 +84,8 @@
     {% endfor %}
 </div>
 {% endif %}
-<p>Використати ваучер:</p>
-<h6 style="color:red;">Зверніть увагу! Використати ваучер можна лише один раз</h6>
+<p>{% trans "Використати ваучер:" %}</p>
+<h6 style="color:red;">{% trans "Зверніть увагу! Використати ваучер можна лише один раз" %}</h6>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
@@ -95,13 +97,13 @@
 {% endif %}
 <form action="{% url 'discount:apply' %}" method="post">
     {{ coupon_apply_form }}
-    <button class="button" type="submit">Застосувати</button>
+    <button class="button" type="submit">{% trans "Застосувати" %}</button>
     {% csrf_token %}
 </form>
     <p class="text-right">
-        <a href="{% url 'home' %}" class="button light">Продовжити покупки</a>
+        <a href="{% url 'home' %}" class="button light">{% trans "Продовжити покупки" %}</a>
         <a href="{% url 'orders:order_create' %}" class="button">
-            Зробити замовлення
+            {% trans "Зробити замовлення" %}
         </a>
     </p>
 {% endblock %}
