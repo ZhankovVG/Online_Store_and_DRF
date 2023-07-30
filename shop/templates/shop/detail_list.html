@@ -1,5 +1,6 @@
 {% extends "shop/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 
@@ -7,21 +8,21 @@
 
 <div class="product-detail">
     <h1>{{ product.name }}</h1>
-    <h2>Категорія: <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+    <h2>{% trans "Категорія:" %} <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
     <img src="{{ product.image.url }}">
-    <p class="price">{{ product.price }} грн.</p>
+    <p class="price">{{ product.price }} {% trans "грн." %}</p>
 
     <form action="{% url 'cart:cart_add' product.id %}" method="post">
         {{ cart_product_form }}
         {% csrf_token %}
-        <button class="button" type="submit">Додати до корзини</button>
+        <button class="button" type="submit">{% trans "Додати до корзини" %}</button>
       </form>
     {{ product.description | linebreaks }}
 </div>
 
 <div class="comments">
     <form action="{% url 'comments' product.id %}" method="post">
-        <h2>Ваш відгук </h2>
+        <h2>{% trans "Ваш відгук" %} </h2>
         {% csrf_token %}
         <div class="input-txt">
             <label for="username"></label>
@@ -36,15 +37,15 @@
             </div>
         </div>
         <div class="button">
-            <button type="submit" class="button">Відправити</button>
+            <button type="submit" class="button">{% trans "Відправити" %}</button>
         </div>
     </form>
 
     <div class="comments-user">
-        <h3>Коментарі:</h3>
+        <h3>{% trans "Коментарі:" %}</h3>
         {% for comment in product.review_set.all %}
-        <p><b>Ім'я :</b> {{ comment.name }}</p>
-        <p><b>Коментар :</b> {{ comment.text }}</p>
+        <p><b>{% trans "Ім'я :" %}</b> {{ comment.name }}</p>
+        <p><b>{% trans "Коментар :" %}</b> {{ comment.text }}</p>
         <hr>
         {% endfor %}
     </div>

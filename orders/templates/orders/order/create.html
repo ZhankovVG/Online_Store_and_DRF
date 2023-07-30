@@ -1,14 +1,15 @@
 {% extends "shop/base.html" %}
+{% load i18n %}
 
 {% block title %}
-Зробити замовлення
+{% trans "Зробити замовлення" %}
 {% endblock %}
 
 {% block content %}
-  <h1>Зробити замовлення</h1>
+  <h1>{% trans "Зробити замовлення" %}</h1>
 
     <div class="order-info">
-        <h3>Ваше замовлення</h3>
+        <h3>{% trans "Ваше замовлення" %}</h3>
         <ul>
             {% for item in cart %}
                 <li>
@@ -17,17 +18,17 @@
             {% endfor %}
             {% if cart.coupon %}
                 <li>
-                Ваучер № {{ cart.coupon.code }}
+                  {% trans "Ваучер" %} № {{ cart.coupon.code }}
                 <span>- {{ cart.get_discount|floatformat:"2" }}</span>
                 </li>
             {% endif %}
         </ul>
-        <p>Сумма замовлення: {{ cart.get_total_price_after_discount|floatformat:"2" }}</p>
+        <p>{% trans "Сумма замовлення:" %} {{ cart.get_total_price_after_discount|floatformat:"2" }}</p>
     </div>
 
   <form action="." method="post" class="order-form">
     {{ form.as_p }}<br>
-    <p><button class="button" type="submit">Розмістити замовлення</button></p>
+    <p><button class="button" type="submit">{% trans "Розмістити замовлення" %}</button></p>
     {% csrf_token %}
   </form>
 {% endblock %}

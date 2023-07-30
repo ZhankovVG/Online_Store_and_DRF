@@ -3,10 +3,11 @@ from .models import *
 from import_export import fields, resources
 from import_export.widgets import ForeignKeyWidget
 from django.utils.safestring import mark_safe
+from modeltranslation.admin import TranslationAdmin
 
 
 @admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(TranslationAdmin):
     # Category
     list_display = ('name', 'url')
     prepopulated_fields = {'url': ('name', )}
@@ -29,7 +30,7 @@ class ProductResource(resources.ModelResource):
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(TranslationAdmin):
     # Product
     list_display = (
         'id', 'name', 'url', 'price', 'get_image', 
