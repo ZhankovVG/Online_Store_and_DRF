@@ -5,6 +5,10 @@ from django.contrib import messages
 from .forms import CommentsAddForm
 from cart.forms import CartAddProductForm
 
+from rest_framework.response import Response
+from rest_framework import generics
+from .serializers import *
+
 
 class Mixin:
     # Class Mixin
@@ -62,3 +66,19 @@ class CommentsView(View):
             form.product = product
             form.save()
         return redirect(product.get_absolute_url())
+
+
+class MixinProductAPIView(generics.GenericAPIView):
+    # Class Mixin
+    serializer_class = None
+    queryset = Product.objects.filter(available=False)
+    
+    
+class ProductApiListView(MixinProductAPIView, generics.ListAPIView):
+    # Product list output
+    serializer_class = ProductListSerializer    
+    
+    
+class ProductApiDetailView(MixinProductAPIView, generics.RetrieveAPIView):
+    # Full description
+    serializer_class = ProductDetailSerializer

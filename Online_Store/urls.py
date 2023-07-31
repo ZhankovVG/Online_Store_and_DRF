@@ -15,7 +15,7 @@ urlpatterns = [
     path('payment/', include('payment.urls', namespace='payment')),
     path('discount/', include('discount.urls', namespace='discount')),
     path('', include('shop.urls')),
-    path('accounts/', include('allauth.urls')),
+    path('accounts/', include('allauth.urls')), 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += i18n_patterns(
