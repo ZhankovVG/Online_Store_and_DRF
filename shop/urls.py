@@ -11,4 +11,5 @@ urlpatterns = [
     # Added URLs for DRF API
     path('api/v1/product/', views.ProductApiListView.as_view()),
     path('api/v1/product/<int:pk>/', views.ProductApiDetailView.as_view()),
+    path('api/v1/review/', views.ReviewApiView.as_view()),
 ]

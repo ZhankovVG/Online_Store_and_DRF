@@ -39,8 +39,8 @@
             </form>
         </td>
         <td><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Видалити" %}</a></td>
-        <td class="num">{{ item.price }}</td>
-        <td class="num">{{ item.total_price }}</td>
+        <td class="num">{{ item.price }} грн.</td>
+        <td class="num">{{ item.total_price }} грн.</td>
     </tr>
     {% endwith %}
     {% endfor %}
@@ -48,16 +48,16 @@
     <tr class="subtotal">
         <td>{% trans "Сумма замовлення" %}</td>
         <td colspan="4"></td>
-        <td class="num">{{ cart.get_total_price|floatformat:"2" }}</td>
+        <td class="num">{{ cart.get_total_price|floatformat:"2" }} грн.</td>
     </tr>
     <tr>
         <td>
-            {% trans "Ваучер" %} №{{ cart.coupon.code }},
-            {% trans "Знижка" %} {{ cart.coupon.discount }}
+            {% trans "Ваучер" %} №{{ cart.coupon.code }} ,
+            {% trans "Знижка" %} {{ cart.coupon.discount }} грн.
         </td>
         <td colspan="4"></td>
         <td class="num neg">
-            {{ cart.get_discount|floatformat:"2" }}
+            {{ cart.get_discount|floatformat:"2" }} грн.
         </td>
     </tr>
     {% endif %}
@@ -65,7 +65,7 @@
         <td>{% trans "Сумма зі знижкою" %}</td>
         <td colspan="4"></td>
         <td class="num">
-            {{ cart.get_total_price_after_discount|floatformat:"2" }}
+            {{ cart.get_total_price_after_discount|floatformat:"2" }} грн.
         </td>
     </tr>
     </tbody>
