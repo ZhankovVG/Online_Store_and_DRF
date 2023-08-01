@@ -82,3 +82,8 @@ class ProductApiListView(MixinProductAPIView, generics.ListAPIView):
 class ProductApiDetailView(MixinProductAPIView, generics.RetrieveAPIView):
     # Full description
     serializer_class = ProductDetailSerializer
+    
+    
+class ReviewApiView(generics.CreateAPIView):
+    # Output coments
+    serializer_class = ReviewCreateSerializer

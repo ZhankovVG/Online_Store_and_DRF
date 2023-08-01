@@ -57,7 +57,7 @@ class Review(models.Model):
         'self', on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Parent'
     )
     product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, verbose_name='Product')
+        Product, on_delete=models.CASCADE, verbose_name='Product', related_name='reviews')
 
     def __str__(self):
         return self.name
