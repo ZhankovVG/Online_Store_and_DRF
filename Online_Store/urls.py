@@ -16,6 +16,9 @@ urlpatterns = [
     path('discount/', include('discount.urls', namespace='discount')),
     path('', include('shop.urls')),
     path('accounts/', include('allauth.urls')), 
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
+    path('auth/', include('djoser.urls.jwt')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += i18n_patterns(
