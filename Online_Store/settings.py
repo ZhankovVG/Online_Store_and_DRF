@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',   
+    
     'shop',
     'cart',
     'orders',
@@ -59,6 +60,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
