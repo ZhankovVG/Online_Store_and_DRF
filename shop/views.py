@@ -8,6 +8,7 @@ from cart.forms import CartAddProductForm
 from rest_framework.response import Response
 from rest_framework import generics, permissions
 from .serializers import *
+from .service import *
 
 
 class Mixin:
@@ -73,6 +74,7 @@ class MixinProductAPIView(generics.GenericAPIView):
     serializer_class = None
     queryset = Product.objects.filter(available=False)
     permission_classes = [permissions.IsAuthenticated]
+    pagination_class = PaginationProduct
     
     
 class ProductApiListView(MixinProductAPIView, generics.ListAPIView):
