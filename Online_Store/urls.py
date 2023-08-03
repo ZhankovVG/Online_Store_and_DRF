@@ -6,6 +6,7 @@ from django.conf import settings
 from django.views.decorators.cache import never_cache
 from django.contrib.staticfiles.views import serve
 from django.conf.urls.i18n import i18n_patterns
+from .yasg import urlpatterns as doc_urls
 
 
 urlpatterns = [
@@ -26,6 +27,8 @@ urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     prefix_default_language=False
 )
+
+urlpatterns+= doc_urls
 
 if settings.DEBUG:
     urlpatterns.append(path('static/<path:path>', never_cache(serve)))
